@@ -8,12 +8,14 @@ export const CartContext = createContext({
   incrementProduct: () => {},
   decrementProduct: () => {},
   setDiscountAmount: () => {},
+  cartCount: 0,
 })
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState({ products: [] })
   const [discountAmount, setDiscountAmount] = useState(0)
   const [checkoutSuccess, setCheckoutSuccess] = useState(false)
+  const [cartCount, setCartCount] = useState(0)
 
   const addToCart = (product) => {
     const productIndex = cart.products.findIndex((p) => p.id === product.id)
@@ -28,6 +30,7 @@ export const CartProvider = ({ children }) => {
     } else {
       setCart({ products: [...cart.products, { ...product, quantity: 1 }] })
     }
+    setCartCount(cartCount + 1)
   }
 
   const removeProduct = (productId) => {
@@ -35,10 +38,12 @@ export const CartProvider = ({ children }) => {
       (product) => product.id !== productId,
     )
     setCart({ products: updatedProducts })
+    setCartCount(cartCount - 1)
   }
 
   const clearCart = () => {
     setCart({ products: [] })
+    setCartCount(0)
   }
 
   const incrementProduct = (productId) => {
@@ -51,6 +56,7 @@ export const CartProvider = ({ children }) => {
     }
 
     setCart({ products: updatedProducts })
+    setCartCount(cartCount + 1)
   }
 
   const decrementProduct = (productId) => {
@@ -63,6 +69,7 @@ export const CartProvider = ({ children }) => {
         quantity: updatedProducts[productIndex].quantity - 1,
       }
       setCart({ products: updatedProducts })
+      setCartCount(cartCount - 1)
     } else {
       removeProduct(productId)
     }
@@ -84,6 +91,7 @@ export const CartProvider = ({ children }) => {
     setDiscountAmount,
     checkoutSuccess,
     handleCheckout,
+    cartCount,
   }
 
   return (

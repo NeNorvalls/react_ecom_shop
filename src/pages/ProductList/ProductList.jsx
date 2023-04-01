@@ -26,26 +26,30 @@ function ProductList({ products }) {
     setSelectedProduct(product)
   }
 
+  const handleAddToCart = (event, product) => {
+    event.stopPropagation()
+    addToCart(product)
+    setCartCount(cartCount + 1)
+  }
+
   return (
-    <ProductListWrapper>
-      {products.map((product) => (
-        <Card key={product.id} onClick={() => handleProductClick(product)}>
-          <CardImage src={product.imageUrl} />
-          <CardBody>
-            <CardTitle>{product.title}</CardTitle>
-            <CardPrice>Price: ${product.price}</CardPrice>
-            <AddToCartButton
-              onClick={(event) => {
-                event.stopPropagation()
-                addToCart(product)
-                setCartCount(cartCount + 1)
-              }}
-            >
-              Add to Cart <FaShoppingCart />
-            </AddToCartButton>
-          </CardBody>
-        </Card>
-      ))}
+    <>
+      <ProductListWrapper>
+        {products.map((product) => (
+          <Card key={product.id} onClick={() => handleProductClick(product)}>
+            <CardImage src={product.imageUrl} />
+            <CardBody>
+              <CardTitle>{product.title}</CardTitle>
+              <CardPrice>Price: ${product.price}</CardPrice>
+              <AddToCartButton
+                onClick={(event) => handleAddToCart(event, product)}
+              >
+                Add to Cart <FaShoppingCart />
+              </AddToCartButton>
+            </CardBody>
+          </Card>
+        ))}
+      </ProductListWrapper>
       <CartCount>Cart Count: {cartCount}</CartCount>
       {selectedProduct && (
         <ProductDetail
@@ -53,7 +57,7 @@ function ProductList({ products }) {
           onClose={() => setSelectedProduct(null)}
         />
       )}
-    </ProductListWrapper>
+    </>
   )
 }
 
