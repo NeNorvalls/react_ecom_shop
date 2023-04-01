@@ -102,6 +102,11 @@ export const AddToCartButton = styled.button`
     color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
+
+  @media (max-width: 576px) {
+    font-size: 16px;
+    padding: 8px;
+  }
 `;
 
 export const CartCount = styled.p`
@@ -113,4 +118,7 @@ export const ProductListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media (max-width: 992px) {
+    justify-content: center
 `;
