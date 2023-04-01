@@ -61,7 +61,7 @@ export const Card = styled.div`
 
 export const CardImage = styled.img`
   width: 100%;
-  height: 200px;
+  height: 120px;
   object-fit: cover;
   margin-bottom: 10px;
 `;
@@ -73,7 +73,7 @@ export const CardBody = styled.div`
 `;
 
 export const CardTitle = styled.h3`
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
 `;
 

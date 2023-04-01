@@ -5,18 +5,14 @@ export const FormContainer = styled.div`
   color: #ffffff;
   padding: 20px;
   border-radius: 5px;
-  margin: 100px auto 0;
-  max-width: 50%;
-  align-items: center;
-  top: 0;
-  display: block;
-  width: 30%;
-  max-width: 30%;
-  min-width: 30%;
-  height: 60%;
+  margin: auto;
+  max-width: 20%;
   border: solid 2px #120a19;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const H1 = styled.h1`
@@ -32,34 +28,44 @@ export const Label = styled.label`
   display: block;
   margin-bottom: 10px;
   margin: auto;
-  padding: 1vh;
+  padding: 1rem;
 `;
-
 export const Input = styled.input`
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  margin: 5rem auto 1rem;
+  border-radius: 2px;
+  margin: 0 auto;
   display: block;
-  margin: 2% auto;
-  width: 85%;
-  height: 3vh;
-  max-height: 20px;
   border: solid 2px #120a19;
+  font-size: 1.5em;
+  letter-spacing: 0.4em;
 `;
 
 export const TextArea = styled.textarea`
   display: block;
   margin: 2% auto 0;
-  width: 85%;
-  height: 10vh;
+  max-width: 100%;
+  height: 5rem;
   max-height: 120px;
   border-radius: 5px;
-  border: solid 2px #120a19;
-  background-color: #dbd6df;
+  border: solid 2px black;
+  background-color: white;
   font-family: sans-serif;
 `;
 
 export const Button = styled.button`
   background-color: #0074d9;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 2rem auto;
+  display: block;
+  text-align: center;
+
+  &:hover {
+    background-color: #ffffff;
+    color: #0074d9;
+    transform: scale(1.05);
+  }
 `;

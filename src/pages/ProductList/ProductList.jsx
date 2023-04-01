@@ -1,5 +1,7 @@
 import { FaShoppingCart } from 'react-icons/fa'
-import useCart from '../../context/UseCart'
+import React, { useState, useContext, useEffect } from 'react'
+import { CartContext } from '../../context/CartContext'
+import ProductDetail from '../ProductDetail/ProductDetail'
 import {
   Card,
   CardImage,
@@ -10,12 +12,15 @@ import {
   CartCount,
   ProductListWrapper,
 } from './ProductList.styles'
-import { useState } from 'react'
-import ProductDetail from '../ProductDetail/ProductDetail'
 
 function ProductList({ products }) {
-  const { cartCount, handleAddToCart } = useCart()
+  const { cart, addToCart } = useContext(CartContext)
   const [selectedProduct, setSelectedProduct] = useState(null)
+  const [cartCount, setCartCount] = useState(cart.products.length)
+
+  useEffect(() => {
+    setCartCount(cart.products.length)
+  }, [cart.products])
 
   const handleProductClick = (product) => {
     setSelectedProduct(product)
@@ -32,7 +37,8 @@ function ProductList({ products }) {
             <AddToCartButton
               onClick={(event) => {
                 event.stopPropagation()
-                handleAddToCart()
+                addToCart(product)
+                setCartCount(cartCount + 1)
               }}
             >
               Add to Cart <FaShoppingCart />

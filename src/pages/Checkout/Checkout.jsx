@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Card, List, ListItem, Input, Button } from './Checkout.styles'
 
-const CheckoutPage = ({ closeModal }) => {
+const Checkout = ({ closeModal }) => {
   const {
     cart,
     removeProduct,
@@ -113,4 +113,4 @@ const CheckoutPage = ({ closeModal }) => {
   )
 }
 
-export default CheckoutPage
+export default Checkout

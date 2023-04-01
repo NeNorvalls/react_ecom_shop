@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { FaStar } from 'react-icons/fa'
-import useCart from '../../context/UseCart'
+import { CartContext } from '../../context/CartContext'
 import {
   ModalOverlay,
   ModalContainer,
@@ -20,7 +20,7 @@ import {
 } from './ProductDetail.styles'
 
 const ProductDetail = ({ product, onClose }) => {
-  const { handleAddToCart } = useCart()
+  const { addToCart } = useContext(CartContext)
   const [averageRating, setAverageRating] = useState(0)
 
   useEffect(() => {
@@ -82,7 +82,7 @@ const ProductDetail = ({ product, onClose }) => {
               </Review>
             ))}
           </ReviewList>
-          <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+          <button onClick={() => addToCart(product)}>Add to Cart</button>
         </ProductDetails>
       </ModalContainer>
     </ModalOverlay>

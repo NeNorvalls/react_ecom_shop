@@ -3,13 +3,17 @@ import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 
 function CartIcon() {
-  const { cart } = useContext(CartContext)
+  const { cart, addToCart } = useContext(CartContext)
 
-  const productItems = cart.products.map((product) => (
+  const { products } = cart
+
+  const productItems = products.map((product) => (
     <li key={product.id}>
       {product.title} - ${product.price}
     </li>
   ))
+
+  const handleAddToCart = (product) => addToCart(product)
 
   return (
     <div>
@@ -17,7 +21,14 @@ function CartIcon() {
       <Link to="/checkout">
         <ul>{productItems}</ul>
       </Link>
-      <p>Number of items: {cart.products ? cart.products.length : 0}</p>
+      <button
+        onClick={() =>
+          handleAddToCart({ id: 1, title: 'Product 1', price: 10.99 })
+        }
+      >
+        Add to Cart
+      </button>
+      <p>Number of items: {products ? products.length : 0}</p>
     </div>
   )
 }

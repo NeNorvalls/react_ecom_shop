@@ -27,6 +27,10 @@ const Home = () => {
     setFilteredProducts(filtered)
   }
 
+  if (!products) {
+    return <div>Loading...</div>
+  }
+
   return (
     <Container>
       <SearchBar>

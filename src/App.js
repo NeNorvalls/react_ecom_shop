@@ -7,7 +7,7 @@ import CartIcon from "./pages/CartIcon/CartIcon";
 import ProductList from "./pages/ProductList/ProductList";
 import Contact from "./pages/Contact/Contact";
 import Checkout from "./pages/Checkout/Checkout";
-import CheckoutSuccess from "./pages/CheckoutSuccess/CheckoutSuccess";
+// import CheckoutSuccess from "./pages/CheckoutSuccess/CheckoutSuccess";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<ProductList />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/checkoutSuccess" element={<CheckoutSuccess />} />
+            {/* <Route path="/checkoutSuccess" element={<CheckoutSuccess />} /> */}
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </Layout>

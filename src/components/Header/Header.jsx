@@ -19,7 +19,7 @@ const Header = () => {
           <h1>eCom Shop</h1>
         </Link>
       </LogoContainer>
-      <CartNavLink href="#" className="active">
+      <CartNavLink as={Link} to="/checkout" className="active">
         <ShoppingCartIcon />
         <span>{cartCount}</span>
       </CartNavLink>
