@@ -93,10 +93,14 @@ export const AddToCartButton = styled.button`
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: #0069d9;
+    background-color: #f39c12;
     cursor: pointer;
+    transform: scale(1.1);
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
 `;
 
