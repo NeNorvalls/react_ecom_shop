@@ -6,13 +6,17 @@ export const FormContainer = styled.div`
   padding: 20px;
   border-radius: 5px;
   margin: auto;
-  max-width: 20%;
+  max-width: 50%;
   border: solid 2px #120a19;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    max-width: 80%;
+  }
 `;
 
 export const H1 = styled.h1`
@@ -22,6 +26,10 @@ export const H1 = styled.h1`
 export const Hr = styled.hr`
   width: 60%;
   border: 1px solid #fff;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `;
 
 export const Label = styled.label`
@@ -37,11 +45,17 @@ export const Input = styled.input`
   border: solid 2px #120a19;
   font-size: 1.5em;
   letter-spacing: 0.4em;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
 `;
 
 export const TextArea = styled.textarea`
   display: block;
   margin: 2% auto 0;
+  width: 100%;
   max-width: 100%;
   height: 5rem;
   max-height: 120px;
@@ -62,6 +76,7 @@ export const Button = styled.button`
   margin: 2rem auto;
   display: block;
   text-align: center;
+  width: 100%;
 
   &:hover {
     background-color: #ffffff;
