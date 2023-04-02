@@ -1,15 +1,6 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useContext } from 'react'
 
-export const CartContext = createContext({
-  cart: { products: [] },
-  addToCart: () => {},
-  removeProduct: () => {},
-  clearCart: () => {},
-  incrementProduct: () => {},
-  decrementProduct: () => {},
-  setDiscountAmount: () => {},
-  cartCount: 0,
-})
+export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState({ products: [] })
@@ -92,6 +83,8 @@ export const CartProvider = ({ children }) => {
     checkoutSuccess,
     handleCheckout,
     cartCount,
+    setCartCount,
+    setCheckoutSuccess,
   }
 
   return (
@@ -99,4 +92,12 @@ export const CartProvider = ({ children }) => {
       {children}
     </CartContext.Provider>
   )
+}
+
+export const useCart = () => {
+  const context = useContext(CartContext)
+  if (!context) {
+    throw new Error('useCart must be used within a CartProvider')
+  }
+  return context
 }

@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  border: 1px solid #ccc;
+  border: 3px solid black;
+  border-top: none;
+  border-bottom: none;
   border-radius: 5px;
   padding: 1em;
-  width: 80%;
+  width: 60%;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 5em auto 0;
+  background-color: burlywood;
+  height: 75%;
 `;
 
 export const List = styled.ul`
