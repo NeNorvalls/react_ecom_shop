@@ -106,9 +106,8 @@ const Checkout = ({ closeModal }) => {
           <div>
             <Button onClick={handleClearCart}>Clear Cart</Button>
             <Link to="/checkoutSuccess">
-              <Button>Checkout</Button>
-            </Link>{' '}
-            {/* Add Link component to create a link to success.jsx */}
+              <Button onClick={handleClearCart}>Checkout</Button>
+            </Link>
           </div>
         </div>
       )}
