@@ -9,7 +9,7 @@ import {
   Button,
   ErrorMessage,
 } from './Contact.styles'
-import ContactSuccess from '../ContactSuccess/ContactSuccess'
+import ContactSuccess from './ContactSuccess/ContactSuccess'
 
 function Contact() {
   const [formData, setFormData] = useState({
