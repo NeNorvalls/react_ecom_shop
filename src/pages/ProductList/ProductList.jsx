@@ -1,6 +1,4 @@
-import { FaShoppingCart } from 'react-icons/fa'
-import React, { useState, useContext, useEffect } from 'react'
-import { CartContext } from '../../context/CartContext'
+import React, { useState } from 'react'
 import ProductDetail from '../ProductDetail/ProductDetail'
 import {
   Card,
@@ -8,29 +6,15 @@ import {
   CardBody,
   CardTitle,
   CardPrice,
-  AddToCartButton,
-  CartCount,
   ProductListWrapper,
   ViewButton,
 } from './ProductList.styles'
 
 function ProductList({ products }) {
-  const { cart, addToCart } = useContext(CartContext)
   const [selectedProduct, setSelectedProduct] = useState(null)
-  const [cartCount, setCartCount] = useState(cart.products.length)
-
-  useEffect(() => {
-    setCartCount(cart.products.length)
-  }, [cart.products])
 
   const handleProductClick = (product) => {
     setSelectedProduct(product)
-  }
-
-  const handleAddToCart = (event, product) => {
-    event.stopPropagation()
-    addToCart(product)
-    setCartCount(cartCount + 1)
   }
 
   return (
@@ -42,11 +26,6 @@ function ProductList({ products }) {
             <CardBody>
               <CardTitle>{product.title}</CardTitle>
               <CardPrice>Price: ${product.price}</CardPrice>
-              <AddToCartButton
-                onClick={(event) => handleAddToCart(event, product)}
-              >
-                Add to Cart <FaShoppingCart />
-              </AddToCartButton>
               <ViewButton onClick={() => handleProductClick(product)}>
                 View
               </ViewButton>
@@ -54,7 +33,6 @@ function ProductList({ products }) {
           </Card>
         ))}
       </ProductListWrapper>
-      <CartCount>Cart Count: {cartCount}</CartCount>
       {selectedProduct && (
         <ProductDetail
           product={selectedProduct}

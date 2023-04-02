@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Card, List, ListItem, Input, Button } from './Checkout.styles'
+import { Link } from 'react-router-dom'
 
 const Checkout = ({ closeModal }) => {
   const {
@@ -65,7 +66,7 @@ const Checkout = ({ closeModal }) => {
 
   return (
     <Card>
-      <h1>Checkout</h1>
+      <h1>Items</h1>
       {cart.products.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
@@ -104,7 +105,10 @@ const Checkout = ({ closeModal }) => {
           </div>
           <div>
             <Button onClick={handleClearCart}>Clear Cart</Button>
-            <Button>Checkout</Button>
+            <Link to="/checkoutSuccess">
+              <Button>Checkout</Button>
+            </Link>{' '}
+            {/* Add Link component to create a link to success.jsx */}
           </div>
         </div>
       )}
