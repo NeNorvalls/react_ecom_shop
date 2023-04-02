@@ -11,6 +11,18 @@ export const Card = styled.div`
   margin: 5em auto 0;
   background-color: burlywood;
   height: 75%;
+
+  @media only screen and (max-width: 768px) {
+    width: 90%;
+    margin: 3em auto 0;
+  }
+
+  @media only screen and (max-width: 256px) {
+    width: 100%;
+    margin: 2em auto 0;
+    padding: 0.5em;
+    height: auto;
+  }
 `;
 
 export const List = styled.ul`
@@ -41,5 +53,10 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #ccc;
+  }
+
+  @media only screen and (max-width: 256px) {
+    padding: 0.3em;
+    margin-left: 0.3em;
   }
 `;
