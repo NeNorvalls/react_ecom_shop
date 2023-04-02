@@ -122,3 +122,30 @@ export const ProductListWrapper = styled.div`
   @media (max-width: 992px) {
     justify-content: center
 `;
+
+export const ViewButton = styled.button`
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #f39c12;
+    cursor: pointer;
+    transform: scale(1.1);
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 576px) {
+    font-size: 16px;
+    padding: 8px;
+  }
+`;

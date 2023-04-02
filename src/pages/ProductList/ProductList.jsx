@@ -11,6 +11,7 @@ import {
   AddToCartButton,
   CartCount,
   ProductListWrapper,
+  ViewButton,
 } from './ProductList.styles'
 
 function ProductList({ products }) {
@@ -36,7 +37,7 @@ function ProductList({ products }) {
     <>
       <ProductListWrapper>
         {products.map((product) => (
-          <Card key={product.id} onClick={() => handleProductClick(product)}>
+          <Card key={product.id}>
             <CardImage src={product.imageUrl} />
             <CardBody>
               <CardTitle>{product.title}</CardTitle>
@@ -46,6 +47,9 @@ function ProductList({ products }) {
               >
                 Add to Cart <FaShoppingCart />
               </AddToCartButton>
+              <ViewButton onClick={() => handleProductClick(product)}>
+                View
+              </ViewButton>
             </CardBody>
           </Card>
         ))}
