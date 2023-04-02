@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const FormContainer = styled.div`
   margin: 2rem auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   max-width: 600px;
   padding: 2rem;
-  background-color: #f5f5f5;
+  background-color: burlywood;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 `;

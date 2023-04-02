@@ -16,7 +16,7 @@ const Header = () => {
     <HeaderWrapper>
       <LogoContainer>
         <Link to="/">
-          <h1>eCom Shop</h1>
+          <h1>e-Shop</h1>
         </Link>
       </LogoContainer>
       <CartNavLink as={Link} to="/checkout" className="active">

@@ -1,24 +1,31 @@
 import styled, { keyframes } from "styled-components";
 import { FaShoppingCart } from "react-icons/fa";
 
-const rainbowAnimation = keyframes`
+const fadeInAnimation = keyframes`
   0% {
-    color: #ff0000;
-  }
-  20% {
-    color: #ff8800;
-  }
-  40% {
-    color: #ffff00;
-  }
-  60% {
-    color: #00ff00;
-  }
-  80% {
-    color: #0077ff;
+    opacity: 0;
   }
   100% {
-    color: #ff00ff;
+    opacity: 1;
+  }
+`;
+
+export const LogoContainer = styled.div`
+  h1 {
+    margin: 0;
+    font-family: "Montserrat Subrayada", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: ${fadeInAnimation} 1s ease-in-out;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -27,18 +34,8 @@ export const HeaderWrapper = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #fff;
+  background-color: burlywood;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-`;
-
-export const LogoContainer = styled.div`
-  h1 {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    animation: ${rainbowAnimation} 2s linear infinite;
-  }
 `;
 
 export const CartNavLink = styled.a`
@@ -61,8 +58,28 @@ export const CartNavLink = styled.a`
   span {
     margin-left: 0.5rem;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 0.8rem;
+
+    span {
+      display: none;
+    }
+  }
 `;
 
 export const ShoppingCartIcon = styled(FaShoppingCart)`
   font-size: 1.5rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;

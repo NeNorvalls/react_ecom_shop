@@ -1,4 +1,4 @@
-import { Card, Heading, Message } from '../CheckoutSuccess/Checkout.styles'
+import { Card, Heading, Message } from './CheckoutSuccess.styles'
 
 const CheckoutSuccess = () => {
   return (

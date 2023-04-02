@@ -17,7 +17,7 @@ import {
   ReviewUser,
   ReviewRating,
   ReviewDescription,
-} from './ProductDetail.styles'
+} from "./ProductDetail.styles"
 
 const ProductDetail = ({ product, onClose }) => {
   const { addToCart } = useContext(CartContext)
