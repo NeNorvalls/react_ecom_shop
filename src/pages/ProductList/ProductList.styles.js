@@ -64,6 +64,10 @@ export const CardImage = styled.img`
   height: 120px;
   object-fit: cover;
   margin-bottom: 10px;
+
+  @media only screen and (max-width: 256px) {
+    height: 80px;
+  }
 `;
 
 export const CardBody = styled.div`
@@ -75,13 +79,20 @@ export const CardBody = styled.div`
 export const CardTitle = styled.h3`
   font-size: 20px;
   margin-bottom: 10px;
+
+  @media only screen and (max-width: 256px) {
+    font-size: 16px;
+  }
 `;
 
 export const CardPrice = styled.p`
   font-weight: bold;
   margin-bottom: 10px;
-`;
 
+  @media only screen and (max-width: 256px) {
+    font-size: 16px;
+  }
+`;
 export const AddToCartButton = styled.button`
   background-color: #007bff;
   color: #fff;
