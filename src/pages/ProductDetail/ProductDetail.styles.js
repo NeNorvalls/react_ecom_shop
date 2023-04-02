@@ -22,8 +22,12 @@ export const ModalContainer = styled.div`
   width: 70%;
   height: 75%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 export const CloseButton = styled.button`
@@ -41,14 +45,26 @@ export const CloseButton = styled.button`
 `;
 
 export const ProductImage = styled.img`
-  width: 50%;
+  width: 100%;
   height: auto;
   object-fit: cover;
-  margin-right: 20px;
+  margin-bottom: 20px;
+  max-height: 250px;
+
+  @media (min-width: 768px) {
+    width: 50%;
+    margin-right: 20px;
+    margin-bottom: 0;
+    max-height: none;
+  }
 `;
 
 export const ProductDetails = styled.div`
-  width: 50%;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 export const ProductTitle = styled.h2`
