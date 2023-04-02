@@ -104,7 +104,6 @@ const Checkout = ({ closeModal }) => {
             <Button onClick={handleApplyDiscount}>Apply Discount</Button>
           </div>
           <div>
-            <Button onClick={handleClearCart}>Clear Cart</Button>
             <Link to="/checkoutSuccess">
               <Button onClick={handleClearCart}>Checkout</Button>
             </Link>
