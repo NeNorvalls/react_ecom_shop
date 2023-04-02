@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { CartContext } from '../../../context/CartContext'
+import { CartContext } from '../../context/CartContext'
 import { Card, Heading, Message } from './CheckoutSuccess.styles'
 
 const CheckoutSuccess = () => {
