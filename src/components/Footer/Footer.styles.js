@@ -23,8 +23,19 @@ export const ScrollButton = styled.button`
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom: 2.2rem;
 
   &:hover {
     background-color: #001f3f;
   }
+`;
+
+export const GoBackButton = styled.button`
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 3rem;
 `;
