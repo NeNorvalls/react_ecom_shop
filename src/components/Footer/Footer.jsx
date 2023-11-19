@@ -1,7 +1,7 @@
 import React from 'react';
 import { FooterContainer, ScrollButton, GoBackButton } from './Footer.styles';
 
-const portfolioURL = "https://nenorvalls-frontend-fusions.netlify.app/";
+const portfolioURL = "https://nenorvalls-portfolio.netlify.app/";
 
 function Footer() {
   const handleScrollToTop = () => {
