@@ -1,5 +1,5 @@
 import React from 'react';
-import { FooterContainer, ScrollButton, GoBackButton } from './Footer.styles';
+import { FooterContainer, ScrollButton } from './Footer.styles';
 
 const portfolioURL = "https://nenorvalls-portfolio.netlify.app/";
 
@@ -15,9 +15,6 @@ function Footer() {
   return (
     <>
      <ScrollButton onClick={handleScrollToTop}>Scroll to Top</ScrollButton>
-      <GoBackButton id="goBackButton" onClick={handleGoBackToPortfolio}>
-        Go back to portfolio!
-      </GoBackButton>
       <FooterContainer>
         <p>&copy; 2023 NeNorvalls eCom_Shop</p>
       </FooterContainer>

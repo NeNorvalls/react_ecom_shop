@@ -8,12 +8,24 @@ import ProductList from "./pages/ProductList/ProductList";
 import Contact from "./pages/Contact/Contact";
 import Checkout from "./pages/Checkout/Checkout";
 import CheckoutSuccess from "./pages/CheckoutSuccess/CheckoutSuccess";
+import { PortfolioText } from './PortfolioStyles';
 
 function App() {
   return (
     <Router>
       <CartProvider>
         <Layout>
+          <PortfolioText>
+            Click here to go back to PortFolio!
+            <a
+              href="https://nenorvalls-portfolio.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolioLink"
+            >
+              Portfolio
+            </a>
+          </PortfolioText>
           <Routes>
             <Route path="/cart" element={<CartIcon />} />
             <Route path="/" element={<Home />} />
