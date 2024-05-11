@@ -14,7 +14,8 @@ function Footer() {
 
   return (
     <>
-     <ScrollButton onClick={handleScrollToTop}>Scroll to Top</ScrollButton>
+      <ScrollButton onClick={handleScrollToTop}>Scroll to Top</ScrollButton>
+      <button onClick={handleGoBackToPortfolio}>Go Back to Portfolio</button>
       <FooterContainer>
         <p>&copy; 2023 NeNorvalls eCom_Shop</p>
       </FooterContainer>
@@ -23,4 +24,3 @@ function Footer() {
 }
 
 export default Footer;
-
